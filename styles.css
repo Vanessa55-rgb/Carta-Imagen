@@ -1,0 +1,115 @@
+/* Reset de margenes y paddings, y aplicar box-sizing para mejor control */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilos generales del body */
+  body {
+    background-color: #111; /* Fondo oscuro */
+    font-family: Arial, sans-serif; /* Fuente legible */
+    color: white; /* Color del texto */
+  }
+  
+  /* Menú superior verde */
+  header {
+    background-color: #4ac3c3; /* Verde claro */
+    padding: 15px;
+    text-align: center;
+  }
+  
+  /* Contenedor principal con flexbox */
+  .contenedor-principal {
+    display: flex;
+    min-height: 100vh; /* Altura completa de la ventana */
+  }
+  
+  /* Barra lateral izquierda */
+  aside {
+    background-color: #222222; /* Gris oscuro */
+    padding: 10px;
+    width: 20%; /* Ocupa 20% del ancho */
+  }
+  
+  /* Input de búsqueda en barra lateral */
+  aside input {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+  }
+  
+  /* Contenedor de las tarjetas, con espacio vertical entre ellas */
+  .contenido {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 15px;
+    width: 80%; /* Ocupa 80% del ancho */
+  }
+  
+  /* Cada tarjeta como un contenedor flex para imagen y texto */
+  .tarjeta {
+    display: flex;
+    background-color: #333; /* Fondo gris oscuro */
+    padding: 10px;
+    align-items: center; /* Centrar verticalmente */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra suave */
+  }
+  
+  /* Imagen de la carta Pokémon */
+  .imagen-carta {
+    width: 80px; /* Ancho fijo */
+    height: auto; /* Altura proporcional */
+    margin-right: 15px; /* Espacio a la derecha */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6); /* Sombra */
+  }
+  
+  /* Contenedor de texto dentro de la tarjeta */
+  .texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+  }
+  
+  /* Primer párrafo (nombre Pokémon) en negrita y más grande */
+  .texto p:first-child {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  /* Estilos para pantallas pequeñas (responsive) */
+  @media screen and (max-width: 768px) {
+    /* Contenedor principal en columna */
+    .contenedor-principal {
+      flex-direction: column;
+    }
+  
+    /* Barra lateral ocupa todo ancho y cambia de orden */
+    aside {
+      width: 100%;
+      order: 2;
+    }
+  
+    /* Contenido ocupa todo ancho */
+    .contenido {
+      width: 100%;
+    }
+  
+    /* Tarjetas en columna y texto centrado */
+    .tarjeta {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    /* Imagen se adapta al ancho máximo */
+    .imagen-carta {
+      width: 100%;
+      max-width: 250px;
+      margin: 0 0 10px 0;
+    }
+  }
